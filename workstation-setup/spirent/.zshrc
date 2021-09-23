@@ -130,7 +130,7 @@ export PATH="/usr/local/opt/go/bin:$PATH"
 
 # export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
-export USER="ltran" # Override local user to match that of AD
+# export USER="ltran" # Override local user to match that of AD
 
 alias flush-dns="sudo killall -HUP mDNSResponder"
 alias git-prune="git remote prune origin"
