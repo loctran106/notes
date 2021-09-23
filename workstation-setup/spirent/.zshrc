@@ -128,12 +128,10 @@ export PATH="/usr/local/opt/go/bin:$PATH"
 
 # test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-# export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-
-# export USER="ltran" # Override local user to match that of AD
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 alias flush-dns="sudo killall -HUP mDNSResponder"
-alias git-prune="git remote prune origin"
+alias git-prune="git fetch -p && for branch in $(git branch -vv | grep ': gone]' | awk '{print $1}'); do git branch -D $branch; done"
 
 # export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 
