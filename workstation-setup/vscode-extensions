@@ -1,10 +1,11 @@
 # VS Code Extensions
+# list them via
+# $ code --list-extensions
 # install them by running
 # cat vscode-extensions | xargs -L 1 code --install-extension
 
 
 4ops.packer
-4ops.terraform
 aaron-bond.better-comments
 aprilandjan.ascii-tree-generator
 CoenraadS.bracket-pair-colorizer

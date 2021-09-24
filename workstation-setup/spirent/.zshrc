@@ -113,7 +113,7 @@ alias login-aws-cip-dev="(cd /Volumes/Data/code/src/github.com/Spirent-DevOps/au
 
 # Vault Helpers
 export VAULT_ADDR="https://vault.spirent.io"
-export VAULT_CACERT="/Volumes/Data/code/src/github.com/Spirent-DevOps/system-imaging/common/tls/cip-devops-rootCA.crt"
+export VAULT_CACERT="/Volumes/Data/code/src/github.com/Spirent-DevOps/system-imaging/common/tls/spirent-eng-cip-ca.crt"
 
 alias login-vault="echo 'Logging into Vault via Active Directory...' ; export VAULT_TOKEN=\$(vault login -token-only -method=ldap username=ltran password=\$(security find-generic-password -a ltran -s ActiveDirectory -w))"
 
