@@ -60,7 +60,7 @@ COMPLETION_WAITING_DOTS="true"
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="yyyy-mm-dd"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -131,7 +131,7 @@ export PATH="/usr/local/opt/go/bin:$PATH"
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 alias flush-dns="sudo killall -HUP mDNSResponder"
-alias git-prune="git fetch -p && for branch in $(git branch -vv | grep ': gone]' | awk '{print $1}'); do git branch -D $branch; done"
+alias git-prune="git fetch -p && for branch in \$(git branch -vv | grep ': gone]' | awk '{print $1}'); do git branch -D $branch; done"
 
 # export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 
