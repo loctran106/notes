@@ -70,7 +70,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(aws git colorize jsontools kubectl pip python brew osx)
+plugins=(aws git colorize jsontools kubectl pip python brew macos)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -103,23 +103,25 @@ source $ZSH/oh-my-zsh.sh
 # Terraform helpers
 export TF_VAR_user_identity=ltran
 export TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
+export CODE_DIR="$HOME/code"
+
 
 alias t="terraform"
 alias td="terraform-docs markdown"
 
-alias login-aws="(cd /Volumes/Data/code/src/github.com/Spirent-DevOps/automation/onelogin-python-aws-assume-role && python ./aws_assume_role.py -u ltran --duration 28800 --onelogin-password \$(security find-generic-password -a ltran -s ActiveDirectory -w))"
-alias login-aws-orion="(cd /Volumes/Data/code/src/github.com/Spirent-DevOps/automation/onelogin-python-aws-assume-role && python ./aws_assume_role.py -u ltran --profile spirent-orion --duration 28800 --onelogin-password \$(security find-generic-password -a ltran -s ActiveDirectory -w))"
-alias login-aws-cip-dev="(cd /Volumes/Data/code/src/github.com/Spirent-DevOps/automation/onelogin-python-aws-assume-role && python ./aws_assume_role.py -u ltran --profile spirent-eng-cip-dev --duration 28800 --onelogin-password \$(security find-generic-password -a ltran -s ActiveDirectory -w))"
+alias login-aws="(cd $CODE_DIR/src/github.com/Spirent-DevOps/automation/onelogin-python-aws-assume-role && python ./aws_assume_role.py -u ltran --duration 28800 --onelogin-password \$(security find-generic-password -a ltran -s ActiveDirectory -w))"
+alias login-aws-orion="(cd $CODE_DIR/src/github.com/Spirent-DevOps/automation/onelogin-python-aws-assume-role && python ./aws_assume_role.py -u ltran --profile spirent-orion --duration 28800 --onelogin-password \$(security find-generic-password -a ltran -s ActiveDirectory -w))"
+alias login-aws-cip-dev="(cd $CODE_DIR/src/github.com/Spirent-DevOps/automation/onelogin-python-aws-assume-role && python ./aws_assume_role.py -u ltran --profile spirent-eng-cip-dev --duration 28800 --onelogin-password \$(security find-generic-password -a ltran -s ActiveDirectory -w))"
 
 # Vault Helpers
 export VAULT_ADDR="https://vault.spirent.io"
-export VAULT_CACERT="/Volumes/Data/code/src/github.com/Spirent-DevOps/system-imaging/common/tls/spirent-eng-cip-ca.crt"
+export VAULT_CACERT="$CODE_DIR/src/github.com/Spirent-DevOps/system-imaging/common/tls/spirent-eng-cip-ca.crt"
 
 alias login-vault="echo 'Logging into Vault via Active Directory...' ; export VAULT_TOKEN=\$(vault login -token-only -method=ldap username=ltran password=\$(security find-generic-password -a ltran -s ActiveDirectory -w))"
 
 # Go Setup
 # make the direcotry
-export GOPATH=/Volumes/Data/golib
+export GOPATH="$CODE_DIR/golib"
 export PATH=$PATH:$GOPATH/bin
 
 # make workspace location
