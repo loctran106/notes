@@ -6,6 +6,8 @@ Turn off .DS_Store
 
 Install xcode
 
+_might not need this anymore_
+
     $ xcode-select --install
 
 Change screenshots dir
@@ -14,7 +16,7 @@ Change screenshots dir
 
 Install homebrew and update it
 
-    $ sudo /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     $ brew update
 
 Install zsh
